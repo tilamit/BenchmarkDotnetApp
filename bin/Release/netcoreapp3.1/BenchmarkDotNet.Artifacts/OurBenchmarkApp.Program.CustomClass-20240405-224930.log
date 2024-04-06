@@ -1,0 +1,7 @@
+// Validating benchmarks:
+// Benchmark CustomClass.GetDataWithWhile: DefaultJob
+//    * Benchmarked method `GetDataWithWhile` is static. Benchmarks MUST be instance methods, static methods are not supported.
+
+// Benchmark CustomClass.GetDataWithForeach: DefaultJob
+//    * Benchmarked method `GetDataWithForeach` is static. Benchmarks MUST be instance methods, static methods are not supported.
+
