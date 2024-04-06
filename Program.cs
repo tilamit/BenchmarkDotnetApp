@@ -11,35 +11,26 @@ namespace OurBenchmarkApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            //CustomClass.GetDataWithForeach();
-
             var config = DefaultConfig.Instance.WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Millisecond));
-            var summary = BenchmarkDotNet.Running.BenchmarkRunner.Run<CustomClass>(config, args);          
+            var summary = BenchmarkDotNet.Running.BenchmarkRunner.Run<CustomClass>(config, args);        
         }
 
         [MemoryDiagnoser]
-        [MeanColumn]
         [Config(typeof(SerialiserBenchmarksConfig))]
         public class CustomClass
         {
-            //string[] arr = { "Jack", "Jessi", "Erica", "John" };
-
-            static int[] arr = new int[5];
+            static int[] arr = new int[1000];
             
             public static void PopulateData()
             {
-                int Min = 0;
-                int Max = 20;
-
-                //int[] arr = new int[5];
+                int Min = 100;
+                int Max = 1000;
 
                 Random randNum = new Random();
 
                 for (int i = 0; i < arr.Length; i++)
                 {
                     arr[i] = randNum.Next(Min, Max);
-                    //Console.WriteLine(arr[i]);
                 }
             }
 
